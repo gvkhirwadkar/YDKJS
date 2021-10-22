@@ -82,3 +82,39 @@ if (baz2 > bar2) {
   console.log('bar2 refactored', bar2);
 }
 
+iAmSameAsVariable();
+console.log(iAmSameAsVariable); //precedence to function hoisting if variable nad function has same name
+
+function iAmSameAsVariable() {
+  console.log('Hello World');
+}
+
+var iAmSameAsVariable = 100;
+
+//with function expression
+
+loo();
+function loo() {
+  console.log('loo');
+}
+
+var loo = function () {
+  console.log('loo Expression');
+};
+
+function loo() {
+  //this one with same name overrides
+  console.log('loo2');
+}
+
+goo();
+var a = true;
+if (a) {
+  function goo() {
+    console.log('1');
+  }
+} else {
+  function goo() {
+    console.log('2');
+  }
+}
