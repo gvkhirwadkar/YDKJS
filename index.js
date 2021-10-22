@@ -106,15 +106,3 @@ function loo() {
   //this one with same name overrides
   console.log('loo2');
 }
-
-goo();
-var a = true;
-if (a) {
-  function goo() {
-    console.log('1');
-  }
-} else {
-  function goo() {
-    console.log('2');
-  }
-}
