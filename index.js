@@ -28,3 +28,57 @@ function someOtherFunc() {
 
 someOtherFunc(1);
 console.log('Outside', arg);
+
+function process(data) {
+  console.log('Processing ', data);
+}
+var someReallyBigData = 'Some really big data may be json';
+
+process(someReallyBigData);
+
+var btn = document.getElementById('my_button');
+
+btn.addEventListener('click', function eventHandler(evt) {
+  debugger;
+  console.log('button clicked');
+});
+
+var foo = true,
+  baz = 10;
+
+if (foo) {
+  //first block
+  var bar = 3;
+  if (baz > bar) {
+    //second block
+    console.log('bar', bar);
+  }
+}
+
+var foo1 = true,
+  baz1 = 10;
+
+if (foo1) {
+  //first block
+  var bar1 = 3;
+}
+
+if (baz1 > bar1) {
+  //second block
+  console.log('bar1 refactored', bar1);
+}
+
+var foo2 = true,
+  baz2 = 10;
+
+if (foo2) {
+  //first block
+  let bar2 = 3;
+}
+let bar2 = 3;
+//This is will not work bcs let is defined in first block and you    referring in second block
+if (baz2 > bar2) {
+  //second block
+  console.log('bar2 refactored', bar2);
+}
+
